@@ -1,7 +1,7 @@
 ---
-name: mongodb_broker
+name: ap-mongodb-broker
 packages: 
-  - mongodb_broker
+  - ap-mongodb-broker
   - java7
 templates:
   bin/mongodb_broker_ctl: bin/mongodb_broker_ctl

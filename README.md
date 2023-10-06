@@ -70,25 +70,25 @@
   
 
 
-## PAAS-TA-MONGODB-SHARD-RELEASE  
+## ap-mongodb-shard-release
 
-### PaaS-TA MongoDB Shard Release Configuration   
+### Application Platform MongoDB Shard Release Configuration
   - mongodb_broker : 1 machine  
   - mongodb_shard : 1 machine  
   - mongodb_config : N machine(s)  
   - mongodb_master : N machine(s)  
   - mongodb_slave : N machine(s)  
 
-### Create PaaS-TA MongoDB Shard Release  
-  - Download the latest PaaS-TA MongoDB Shard Release  
+### Create Application Platform MongoDB Shard Release
+  - Download the latest Application Platform MongoDB Shard Release
     ```  
-    $ git clone https://github.com/PaaS-TA/PAAS-TA-MONGODB-SHARD-RELEASE.git  
-    $ cd PAAS-TA-MONGODB-SHARD-RELEASE  
+    $ git clone https://github.com/K-PaaS/ap-mongodb-shard-release.git
+    $ cd ap-mongodb-shard-release
     ```  
   - Download & Copy "source files" into the src directory
     ```
     ## download source files
-    $ wget -O src.zip https://nextcloud.paas-ta.org/index.php/s/s96SXxjxoGrCnPw/download
+    $ wget -O src.zip https://nextcloud.k-paas.org/index.php/s/m3oJzNbD8axKFKR/download
     
     ## unzip download source files
     $ unzip src.zip 
@@ -102,20 +102,20 @@
         ├── mongodb
         │   ├── libssl1.1_1.1.1f-1ubuntu2.19_amd64.deb
         │   └── mongodb-linux-x86_64-ubuntu1804-4.2.17.tgz
-        └── mongodb_broker
-            └── openpaas-cf-service-java-broker-mongodb.jar
+        └── ap-mongodb-broker
+            └── ap-mongodb-broker.jar
     ```
-  - Create PaaS-TA MongoDB Shard Release  
+  - Create Application Platform MongoDB Shard Release
     ```  
     ## <VERSION> :: release version (e.g. 2.1.2)
-    ## <RELEASE_TARBALL_PATH> :: release file path (e.g. /home/ubuntu/workspace/paasta-mongodb-shard-<VERSION>.tgz)
-    $ bosh -e <bosh_name> create-release --name=paasta-mongodb-shard --version=<VERSION> --tarball=<RELEASE_TARBALL_PATH> --force
+    ## <RELEASE_TARBALL_PATH> :: release file path (e.g. /home/ubuntu/workspace/ap-mongodb-shard-release-<VERSION>.tgz)
+    $ bosh -e <bosh_name> create-release --name=ap-mongodb-shard --version=<VERSION> --tarball=<RELEASE_TARBALL_PATH> --force
 
     ```   
 
 
 ## Contributors ✨
 
-<a href="https://github.com/PaaS-TA/PAAS-TA-MONGODB-SHARD-RELEASE/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=PaaS-TA/PAAS-TA-MONGODB-SHARD-RELEASE" />
+<a href="https://github.com/K-PaaS/ap-mongodb-shard-release/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=K-PaaS/ap-mongodb-shard-release" />
 </a>
