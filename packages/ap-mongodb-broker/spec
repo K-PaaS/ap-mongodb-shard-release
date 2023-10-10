@@ -1,0 +1,7 @@
+---
+name: ap-mongodb-broker
+
+dependencies:
+- java7
+files:
+- ap-mongodb-broker/ap-mongodb-broker.jar

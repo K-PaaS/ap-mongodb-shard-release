@@ -4,8 +4,9 @@ set -e # exit immediately if a simple command exits with a non-zero status
 set -u # report the usage of uninitialized variables
 
 # Setup env vars and folders for the webapp_ctl script
-export JOB_NAME='mongodb_broker'
-source /var/vcap/jobs/mongodb_broker/helpers/ctl_setup.sh $JOB_NAME
+export JOB_NAME='ap-mongodb-broker'
+source /var/vcap/jobs/$JOB_NAME/helpers/ctl_setup.sh $JOB_NAME
+export LOG_DIR="/var/vcap/sys/log/$JOB_NAME"
 
 export PORT=${PORT:-5000}
 export LANG=en_US.UTF-8
@@ -19,7 +20,7 @@ case $1 in
     export PKG_DIR=/var/vcap/packages/$JOB_NAME
     
     cd $JOB_DIR
-    exec java -cp "${PKG_DIR}/openpaas-cf-service-java-broker-mongodb.jar:/var/vcap/jobs/mongodb_broker/config" org.springframework.boot.loader.JarLauncher\
+    exec java -cp "${PKG_DIR}/ap-mongodb-broker.jar:/var/vcap/jobs/ap-mongodb-broker/config" org.springframework.boot.loader.JarLauncher\
          --spring.config.name=$JOB_NAME \
          >>$LOG_DIR/$JOB_NAME.stdout.log \
          2>>$LOG_DIR/$JOB_NAME.stderr.log &
